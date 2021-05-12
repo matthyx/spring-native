@@ -42,6 +42,17 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<image>
+						<builder>dmikusa/tiny-java-native</builder>
+						<env>
+							<BP_NATIVE_IMAGE>true</BP_NATIVE_IMAGE>
+						</env>
+						<bindings>
+							<binding>${basedir}/bindings/ca-certificates:/platform/bindings/ca-certificates</binding>
+						</bindings>
+					</image>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
